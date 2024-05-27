@@ -161,7 +161,21 @@ addressInput.addEventListener("input", function(event){
 checkoutBtnc.addEventListener("click", function(){
     const isOpen = checkRestaurantOpen();
     if(!isOpen){
-        alert("RESTAURANTE FECHADO NO MOMENTO!")
+        
+        Toastify({
+            text: "Ops o restaurante está fechado!",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+            background: "#ef4444", 
+            },
+        }).showToast();
+
         return;
     }
 
